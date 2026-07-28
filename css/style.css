@@ -2500,3 +2500,32 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
   left:15%!important;
   right:7.3%!important;
 }
+
+
+/* ===== v0.20.6 CODEX TRANSMISSION IMAGE CARD ===== */
+.menu-info-card.featured.codex-transmission-card{
+  display:block!important;
+  flex:0 0 auto!important;
+  min-height:0!important;
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  overflow:visible!important;
+}
+.codex-transmission-image{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:100%;
+  object-fit:contain;
+}
+.codex-transmission-runtime{
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  overflow:hidden!important;
+  opacity:0!important;
+  pointer-events:none!important;
+  clip-path:inset(50%)!important;
+}
