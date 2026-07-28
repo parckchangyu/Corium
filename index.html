@@ -6,8 +6,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- Corium Codex v1.2 cost sync: 60 units -->
-<title>CORIUM Prototype v0.20.0</title>
+<title>CORIUM Prototype v0.20.1</title>
 <link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/menu-layout.css" />
 </head>
 <body>
 <div class="rotate-device-overlay" aria-live="polite"><div class="rotate-device-card"><div class="rotate-device-icon">▭</div><b>가로 화면으로 돌려주세요</b><span>CORIUM 모바일 전투는 가로 모드에 최적화되어 있습니다.</span></div></div>
@@ -15,9 +16,12 @@
 
 <div class="main-menu" id="mainMenu">
   <div class="menu-panel">
-    <div class="menu-logo">CORIUM</div>
-    <div class="menu-subtitle"><span class="subtitle-main">FRONTIER COMMAND</span><span class="subtitle-sep">·</span><span class="subtitle-copy">코리움을 차지할 마지막 사령관을 결정하라</span></div>
-    <div class="account-bar"><span>해금 <b id="menuUnlockCount">0 / 60</b></span><span>크레딧 <b id="menuCredits">3,000</b></span></div>
+    <div class="menu-brand">
+      <div class="menu-logo">CORIUM</div>
+      <div class="menu-brand-copy">THE LAST FRONTIER</div>
+    </div>
+    <div class="menu-subtitle"><span class="subtitle-main">FRONTIER COMMAND</span><span class="subtitle-sep">·</span><span class="subtitle-copy">마지막 자원을 둘러싼 4인의 개척전쟁</span></div>
+    <div class="account-bar"><span><small>UNLOCKED</small><em>해금</em><b id="menuUnlockCount">0 / 60</b></span><span><small>CREDITS</small><em>크레딧</em><b id="menuCredits">3,000</b></span></div>
     <div class="menu-buttons">
       <button class="menu-btn primary" id="startGameBtn"><span class="menu-icon">✦</span><span class="menu-label"><b>게임 시작</b><small>MATCH</small></span></button>
       <button class="menu-btn" id="collectionBtn"><span class="menu-icon">▤</span><span class="menu-label"><b>코덱스</b><small id="collectionStatus">CODEX</small></span></button>
@@ -27,12 +31,18 @@
     </div>
     <section class="menu-hero">
       <canvas id="menuHeroCanvas" width="760" height="760"></canvas>
-      <div class="menu-copy"><strong>전장을 지휘하라</strong><span>코리움을 확보하고<br>최후의 사령관이 되어라</span></div>
+      <div class="menu-hero-shade"></div>
+      <div class="menu-copy">
+        <small>COMMAND THE FRONTIER</small>
+        <strong>전장을<br>지휘하라</strong>
+        <span>코리움을 확보하고 최후의 사령관이 되어라</span>
+      </div>
+      <div class="menu-hero-coordinate">SECTOR 07 · CORIUM FRONTIER</div>
     </section>
     <aside class="menu-side">
-      <div class="menu-info-card season-card"><small>SEASON 1</small><h3>개척의 시대</h3><p>미지의 행성에서 코리움 광맥이 발견됐다.<br>세 세력의 첫 개척전쟁이 시작된다.</p></div>
+      <div class="menu-info-card season-card"><small>SEASON 01 · FRONTIER ERA</small><h3>개척의 시대</h3><p>미지의 행성에서 코리움 광맥이 발견됐다.<br>세 세력의 첫 개척전쟁이 시작된다.</p></div>
       <div class="menu-info-card featured" id="featuredUnitCard">
-        <small>CODEX TRANSMISSION</small>
+        <small>CODEX TRANSMISSION · LIVE</small>
         <div class="featured-unit" id="featuredUnitBody">
           <canvas id="featuredUnitCanvas" width="220" height="220"></canvas>
           <div class="featured-unit-copy">
@@ -44,7 +54,7 @@
         </div>
       </div>
     </aside>
-    <div class="menu-footer"><span><b>COMMANDER_435</b> · FEDERATION EXPEDITIONARY FORCE</span><span>BUILD 0.19.51 · CODEX DETAIL PASS</span></div>
+    <div class="menu-footer"><span><b>COMMANDER_435</b> · FEDERATION EXPEDITIONARY FORCE</span><span>BUILD 0.20.1 · MAIN MENU LAYOUT</span></div>
   </div>
 </div>
 

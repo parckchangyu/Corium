@@ -10,3 +10,9 @@
 ## 실행
 
 저장소 루트의 `index.html`을 열거나 Netlify로 배포합니다.
+
+
+## Current version
+
+- v0.20.1 — Main Menu Layout Rebuild
+- 상세 변경 내역은 `CHANGELOG.md`를 참고하세요.
