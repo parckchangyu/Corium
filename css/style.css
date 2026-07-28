@@ -2352,3 +2352,73 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
   .menu-label b{font-size:11px!important}.menu-label small{font-size:7px!important}
   .account-bar{padding:0 8px!important}.account-bar span{min-width:95px;height:32px;padding:0 8px!important}.account-bar b{font-size:13px!important}
 }
+
+/* ===== v0.20.4 SEASON HUB SINGLE-IMAGE CARD ===== */
+/* Asset path: assets/ui/season/season-hub-season01.png */
+.season-card{
+  position:relative;
+  width:100%;
+  max-width:100%;
+  margin:0;
+  padding:0;
+  border:0;
+  background:transparent;
+  box-shadow:none;
+  overflow:visible;
+  line-height:0;
+  align-self:flex-start;
+  cursor:default;
+}
+.season-card::before,
+.season-card::after{
+  display:none!important;
+  content:none!important;
+}
+.season-card img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:min(62vh,680px);
+  object-fit:contain;
+  object-position:top center;
+  border:0;
+  border-radius:0;
+  filter:drop-shadow(0 18px 34px rgba(0,0,0,.42));
+  transform:translateZ(0);
+  transition:transform .24s ease,filter .24s ease;
+  user-select:none;
+  -webkit-user-drag:none;
+}
+.season-card:hover img{
+  transform:translateY(-3px);
+  filter:brightness(1.035) drop-shadow(0 22px 42px rgba(0,0,0,.5));
+}
+
+/* Keep the full-height image card above the featured Codex card. */
+.menu-side{
+  min-height:0!important;
+}
+.menu-side>.season-card{
+  flex:0 1 auto;
+  min-height:0;
+}
+.menu-info-card.featured{
+  flex:0 0 auto;
+}
+
+@media (max-width:1450px) and (min-width:1101px){
+  .season-card img{max-height:min(58vh,590px)}
+}
+
+@media(max-width:1100px) and (min-width:761px){
+  .season-card{display:none!important}
+}
+
+@media(max-width:760px){
+  .season-card{display:none!important}
+}
+
+@media (pointer:coarse) and (orientation:landscape) and (max-height:620px){
+  .season-card{display:block!important}
+  .season-card img{max-height:calc(100dvh - 140px)}
+}
