@@ -23,34 +23,27 @@
     <div class="menu-subtitle"><span class="subtitle-main">FRONTIER COMMAND</span><span class="subtitle-sep">·</span><span class="subtitle-copy">코리움을 차지할 마지막 사령관을 결정하라</span></div>
     <div class="account-bar"><span>해금 <b id="menuUnlockCount">0 / 60</b></span><span>크레딧 <b id="menuCredits">3,000</b></span></div>
     <div class="menu-buttons">
-      <button class="menu-btn primary" id="startGameBtn"><span class="menu-icon">✦</span><span class="menu-label"><b>게임 시작</b><small>MATCH</small></span></button>
-      <button class="menu-btn" id="collectionBtn"><span class="menu-icon">▤</span><span class="menu-label"><b>코덱스</b><small id="collectionStatus">CODEX</small></span></button>
-      <button class="menu-btn" id="shopBtn"><span class="menu-icon">◆</span><span class="menu-label"><b>상점</b><small>STORE</small></span></button>
-      <button class="menu-btn" id="guideBtn"><span class="menu-icon">◫</span><span class="menu-label"><b>가이드</b><small>GUIDE</small></span></button>
-      <button class="menu-btn" id="optionsBtn"><span class="menu-icon">⚙</span><span class="menu-label"><b>옵션</b><small>OPTIONS</small></span></button>
+      <button class="menu-btn primary" id="startGameBtn"><canvas class="menu-icon-canvas" width="96" height="96" data-menu-icon="match"></canvas><span class="menu-label"><b>게임 시작</b><small>MATCH</small></span><span class="menu-arrow">›</span></button>
+      <button class="menu-btn" id="collectionBtn"><canvas class="menu-icon-canvas" width="96" height="96" data-menu-icon="codex"></canvas><span class="menu-label"><b>코덱스</b><small id="collectionStatus">CODEX</small></span><span class="menu-arrow">›</span></button>
+      <button class="menu-btn" id="shopBtn"><canvas class="menu-icon-canvas" width="96" height="96" data-menu-icon="store"></canvas><span class="menu-label"><b>상점</b><small>STORE</small></span><span class="menu-arrow">›</span></button>
+      <button class="menu-btn" id="guideBtn"><canvas class="menu-icon-canvas" width="96" height="96" data-menu-icon="guide"></canvas><span class="menu-label"><b>가이드</b><small>GUIDE</small></span><span class="menu-arrow">›</span></button>
+      <button class="menu-btn" id="optionsBtn"><canvas class="menu-icon-canvas" width="96" height="96" data-menu-icon="options"></canvas><span class="menu-label"><b>옵션</b><small>OPTIONS</small></span><span class="menu-arrow">›</span></button>
     </div>
     <section class="menu-hero" aria-label="CORIUM 전장 배경">
       <canvas id="menuHeroCanvas" width="760" height="760"></canvas>
       <div class="menu-copy"><strong>전장을 지휘하라</strong><span>코리움을 확보하고<br>최후의 사령관이 되어라</span></div>
     </section>
     <aside class="menu-side">
-      <div class="season-card" aria-label="시즌 01 개척의 시대">
-        <img src="./assets/ui/season/season-hub-season01.webp" alt="시즌 01 개척의 시대 - 행성 모리아">
-        <div class="season-card-copy" aria-hidden="true">
-          <div class="season-card-heading">
-            <span>SEASON 01</span>
-            <b>&lt;개척의 시대&gt;</b>
-          </div>
-          <div class="season-card-story">
-            <strong>미지의 행성, 모리아</strong>
-            <p>거대한 코리움 광맥이 발견되며<br>오랫동안 이어진 균형은 무너졌습니다</p>
-            <p>이제 세 세력은 새로운 시대를 차지하기 위한<br>첫 개척 전쟁에 돌입합니다</p>
-          </div>
-        </div>
-      </div>
-      <div class="menu-info-card featured codex-transmission-card" id="featuredUnitCard">
-        <img class="codex-transmission-image" src="./assets/ui/codex/codex-transmission.webp" alt="Codex Transmission">
-        <div class="featured-unit codex-transmission-runtime" id="featuredUnitBody" aria-hidden="true">
+      <section class="menu-info-card season-summary-card" aria-label="시즌 1 개척의 시대">
+        <div class="panel-kicker">SEASON 1</div>
+        <h3>개척의 시대</h3>
+        <p>미지의 행성에서 코리움 광맥이 발견됐다.</p>
+        <p>세 세력의 첫 개척전쟁이 시작된다.</p>
+        <div class="panel-watermark" aria-hidden="true">✦</div>
+      </section>
+      <section class="menu-info-card featured codex-summary-card" id="featuredUnitCard">
+        <div class="panel-kicker panel-kicker-line">CODEX TRANSMISSION</div>
+        <div class="featured-unit" id="featuredUnitBody" aria-hidden="true">
           <canvas id="featuredUnitCanvas" width="220" height="220"></canvas>
           <div class="featured-unit-copy">
             <span class="featured-faction" id="featuredFaction">연합군</span>
@@ -59,7 +52,7 @@
             <p id="featuredUnitTrait">대형 방패로 전선을 지키는 기계화 선봉 분대</p>
           </div>
         </div>
-      </div>
+      </section>
     </aside>
     <div class="menu-footer"><span><b>COMMANDER_435</b> · FEDERATION EXPEDITIONARY FORCE</span><span>BUILD 0.19.51 · CODEX DETAIL PASS</span></div>
   </div>
