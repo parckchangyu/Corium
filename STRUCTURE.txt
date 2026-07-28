@@ -1,0 +1,11 @@
+CORIUM v0.20.0
+
+index.html
+css/style.css
+js/core.js
+assets/backgrounds/main-menu.png
+assets/ui/.gitkeep
+assets/units/.gitkeep
+assets/effects/.gitkeep
+
+주의: 이번 버전은 안전한 1차 구조 분리입니다. JavaScript는 기능 손상을 막기 위해 core.js 하나로 유지했습니다.
