@@ -6,7 +6,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- Corium Codex v1.2 cost sync: 60 units -->
-<title>CORIUM Prototype v0.19.50 Mobile Landscape</title>
+<title>CORIUM Prototype v0.19.51 Codex Guide</title>
 <style>
 :root{
     --bg:#0c111b; --panel:#151d2b; --panel2:#1d2738; --text:#eef4ff; --muted:#9fb0c7;
@@ -1568,6 +1568,10 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
   .faction-select-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:6px!important;margin-top:6px!important}.faction-choice{min-height:0!important}.faction-choice-art{height:86px!important}.faction-choice-art canvas{width:82px!important;height:82px!important}.faction-choice-body{padding:8px!important}.faction-choice h3{font-size:15px!important;margin:4px 0!important}.faction-choice-lore{min-height:0!important;font-size:7px!important;line-height:1.4!important}.faction-playstyle{margin-top:7px!important;padding-top:6px!important}.faction-tags{gap:3px!important}.faction-tags span{padding:3px 4px!important;font-size:6px!important}.faction-select-foot{margin-top:7px!important;padding-top:6px!important}.faction-confirm{min-width:160px!important;padding:8px!important;font-size:9px!important}
 }
 
+
+/* ===== v0.19.51 CODEX INFORMATION HIERARCHY + GUIDE ===== */
+.guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.guide-grid .options-section{margin-top:0!important}.guide-grid h3{color:#72d0ff}.guide-grid p{word-break:keep-all}.codex-card-topline{display:flex;align-items:center;gap:8px;min-width:0;margin-bottom:10px;color:#a9bed3;font-size:11px;font-weight:900}.codex-card-topline .faction{color:var(--faction-color);white-space:nowrap}.codex-card-topline .class{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.codex-card-rarity{margin-bottom:7px;color:#d9e5f1;font-size:10px;font-weight:1000;letter-spacing:.14em}.codex-card-name{margin:0 0 7px;color:#f0f7ff;font-size:23px;line-height:1.08;font-weight:1000;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.codex-card-level{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:9px;color:#dbe9f5;font-size:11px;font-weight:900}.codex-card-level b{font-size:15px}.codex-card-code{margin-left:auto;color:#71889f;font-size:9px;letter-spacing:.12em}.collection-card.codex-card{cursor:default}.collection-card.codex-card.detail-ready{cursor:zoom-in}.codex-card-foot .detail-hint{color:#6f879f}.codex-stat-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}.unit-detail-head-code{margin-top:7px;color:#71889f;font-size:10px;font-weight:900;letter-spacing:.13em}.unit-detail-tags .rarity-tag{color:#dce8f3!important}.unit-detail-tags .level-tag{color:#ffd166!important}.unit-detail-tags .cost-tag{color:#ffd166!important;border-color:#826321!important}.unit-detail-body .detail-stats{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+@media(max-width:760px){.guide-grid{grid-template-columns:1fr}.codex-card-name{font-size:12px}.codex-card-topline{font-size:7px;margin-bottom:5px}.codex-card-rarity{font-size:6px;margin-bottom:4px}.codex-card-level{font-size:7px;margin-bottom:5px}.codex-card-level b{font-size:9px}.codex-card-code{font-size:6px}}
 </style>
 </head>
 <body>
@@ -1580,10 +1584,11 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
     <div class="menu-subtitle"><span class="subtitle-main">THE LAST FRONTIER</span><span class="subtitle-sep">·</span><span class="subtitle-copy">마지막 자원을 둘러싼 4인의 개척전쟁</span></div>
     <div class="account-bar"><span>해금 <b id="menuUnlockCount">0 / 60</b></span><span>크레딧 <b id="menuCredits">3,000</b></span></div>
     <div class="menu-buttons">
-      <button class="menu-btn primary" id="startGameBtn">게임 시작</button>
-      <button class="menu-btn" id="collectionBtn">코덱스 <span class="menu-status" id="collectionStatus">0 / 60</span></button>
+      <button class="menu-btn primary" id="startGameBtn">게임 시작 <span class="menu-status">MATCH</span></button>
+      <button class="menu-btn" id="collectionBtn">코덱스 <span class="menu-status" id="collectionStatus">CODEX</span></button>
       <button class="menu-btn" id="shopBtn">상점 <span class="menu-status">STORE</span></button>
-      <button class="menu-btn" id="optionsBtn">옵션 <span class="menu-status">OPTION</span></button>
+      <button class="menu-btn" id="guideBtn">가이드 <span class="menu-status">GUIDE</span></button>
+      <button class="menu-btn" id="optionsBtn">옵션 <span class="menu-status">OPTIONS</span></button>
     </div>
     <section class="menu-hero">
       <canvas id="menuHeroCanvas" width="760" height="760"></canvas>
@@ -1604,7 +1609,7 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
         </div>
       </div>
     </aside>
-    <div class="menu-footer"><span><b>COMMANDER_435</b> · FEDERATION EXPEDITIONARY FORCE</span><span>BUILD 0.19.44 · CANVAS DETAIL PASS</span></div>
+    <div class="menu-footer"><span><b>COMMANDER_435</b> · FEDERATION EXPEDITIONARY FORCE</span><span>BUILD 0.19.51 · CODEX DETAIL PASS</span></div>
   </div>
 </div>
 
@@ -1654,7 +1659,7 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
   </div>
   <div class="side">
     <div class="card">
-      <h1>CORIUM Prototype v0.19.50</h1>
+      <h1>CORIUM Prototype v0.19.51</h1>
       <div class="stats">
         <div class="stat">턴 <b id="turn">1</b></div>
         <div class="stat">단계 <span class="phase" id="phase">명령</span></div>
@@ -1742,7 +1747,7 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
 <div class="meta-modal" id="collectionModal">
   <div class="meta-backdrop" data-close="collectionModal"></div>
   <div class="meta-window">
-    <div class="meta-head"><div><div class="meta-kicker">UNIT ARCHIVE</div><h2 id="collectionTitle">전체 유닛 컬렉션</h2><div style="color:#8299ae;font-size:12px">세력별 유닛을 확인하고 전투 스탯과 상세 정보를 열람할 수 있습니다.</div></div><button class="meta-close" data-close="collectionModal">×</button></div>
+    <div class="meta-head"><div><div class="meta-kicker">UNIT ARCHIVE</div><h2 id="collectionTitle">전체 유닛 컬렉션</h2><div style="color:#8299ae;font-size:12px">카드는 전투 핵심 정보만 표시합니다. 더블클릭하거나 길게 눌러 패시브·설명·레벨업을 확인하세요.</div></div><button class="meta-close" data-close="collectionModal">×</button></div>
     <div class="collection-toolbar" style="justify-content:flex-end"><button class="sort-btn" id="collectionSortBtn">정렬: 일반 → 전설</button></div>
     <div class="collection-filters collection-filter-group" id="collectionFilters">
       <div class="collection-filter-label">FACTION</div>
@@ -1803,6 +1808,24 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
         <div class="draw-result" id="drawResult"><h3>보급 결과</h3><div class="result-grid" id="resultGrid"></div></div>
       </div>
       <aside class="shop-side"><h3>보유 크레딧</h3><div style="font-size:31px;font-weight:1000;color:#ffd166" id="shopCredits">3,000</div><p>프로토타입 테스트용 재화입니다. 브라우저 저장소에 보유 유닛과 함께 저장됩니다.</p><p class="dup-note">중복 유닛은 해당 유닛 조각 3개로 전환됩니다. 조각을 모아 코덱스에서 유닛 레벨을 올릴 수 있습니다.</p><div style="margin-top:18px">총 보유 조각 <b id="shopTokens">0</b></div><button class="back-main-btn" data-back-main="shopModal" style="width:100%;margin-top:22px">← 주메뉴로 돌아가기</button></aside>
+    </div>
+  </div>
+</div>
+
+<div class="meta-modal" id="guideModal">
+  <div class="meta-backdrop" data-close="guideModal"></div>
+  <div class="meta-window options-window guide-window">
+    <div class="meta-head">
+      <div><div class="meta-kicker">COMMANDER GUIDE</div><h2>가이드</h2><div style="color:#8299ae;font-size:12px">전투에 필요한 핵심 규칙과 조작법을 확인합니다.</div></div>
+      <button class="meta-close" data-close="guideModal">×</button>
+    </div>
+    <div class="guide-grid">
+      <section class="options-section"><h3>RULES · 승리 조건</h3><p>15×15 전장에서 코리움 200을 먼저 확보하거나, 적 본부를 파괴하고 최후의 생존자가 되면 승리합니다.</p></section>
+      <section class="options-section"><h3>CONTROLS · 조작</h3><p>유닛 선택 후 행동을 고르고 유효 헥스를 지정합니다. 맵은 드래그로 이동하고 확대·축소할 수 있습니다.</p></section>
+      <section class="options-section"><h3>ROLES · 역할</h3><p>Vanguard, Fighter, Assault, Skirmisher, Defender, Sniper, Artillery, Support, Recon, Mining 역할에 따라 운용 방식이 달라집니다.</p></section>
+      <section class="options-section"><h3>STATUS · 상태 효과</h3><p>공격력·방어력 변화, 회복, 지속 피해, 시야 및 이동 관련 효과는 유닛 패시브와 전투 로그에서 확인할 수 있습니다.</p></section>
+      <section class="options-section"><h3>TERRAIN · 지형</h3><p>일반 지형은 기본 이동, 산악은 이동력 1.5를 소모하며, 바다는 이동할 수 없습니다. 산악의 고지대 공격은 보너스를 얻습니다.</p></section>
+      <section class="options-section"><h3>UI · 화면 정보</h3><p>코덱스 카드는 COST, HP, ATK, DEF / MOV, RNG, VSN, SPD를 두 줄로 보여줍니다. 상세 정보는 더블클릭 또는 길게 누르기로 엽니다.</p></section>
     </div>
   </div>
 </div>
@@ -1999,7 +2022,7 @@ function totalFragments(){return Object.values(account.fragments||{}).reduce((a,
 function updateAccountUI(){
   const count=account.unlocked.length;
   const shopCreditText=adminMode?'∞':account.credits.toLocaleString();
-  const values={menuUnlockCount:`${count} / 60`,collectionStatus:`${count} / 60`,menuCredits:shopCreditText,shopCredits:shopCreditText,shopTokens:totalFragments()};
+  const values={menuUnlockCount:`${count} / 60`,collectionStatus:'CODEX',menuCredits:shopCreditText,shopCredits:shopCreditText,shopTokens:totalFragments()};
   Object.entries(values).forEach(([id,v])=>{const e=document.getElementById(id);if(e)e.textContent=v;});
   const banner=SUPPLY_BANNERS?.[selectedSupplyBanner]||SUPPLY_BANNERS?.premium;
   const one=document.getElementById('drawOneBtn'),ten=document.getElementById('drawTenBtn');
@@ -2016,6 +2039,16 @@ function upgradeUnit(type){
 }
 function factionColor(faction){return faction==='united'?'#2f9dff':faction==='astra'?'#43d982':'#ff504f';}
 function categoryName(category){return category==='combat'?'Combat':category==='support'?'Support':'Mining';}
+function attachCodexDetailGesture(card,key){
+  let pressTimer=null,openedByPress=false;
+  card.addEventListener('dblclick',e=>{e.preventDefault();openUnitDetail(key);});
+  const start=()=>{openedByPress=false;clearTimeout(pressTimer);pressTimer=setTimeout(()=>{openedByPress=true;openUnitDetail(key);},520);};
+  const cancel=()=>{clearTimeout(pressTimer);pressTimer=null;};
+  card.addEventListener('touchstart',start,{passive:true});
+  card.addEventListener('touchend',cancel,{passive:true});
+  card.addEventListener('touchcancel',cancel,{passive:true});
+  card.addEventListener('touchmove',cancel,{passive:true});
+}
 function renderCollection(){
   const box=document.getElementById('collectionGrid');if(!box)return;box.innerHTML='';
   const rarityOrder=collectionSortAscending?['common','elite','hero']:['hero','elite','common'];
@@ -2033,9 +2066,9 @@ function renderCollection(){
     const fragmentPercent=owned?(maxed?100:Math.min(100,frags/need*100)):0;
     const fragmentLabel=owned?(maxed?'MAX':`${frags} / ${need}`):'미해금';
     const card=document.createElement('article');card.className='collection-card codex-card'+(owned?'':' locked');card.dataset.unit=key;card.style.setProperty('--faction-color',factionColor(u.faction));
-    const stats=[['COST',u.cost],['HP',owned?enhancedValue(key,'hp'):u.hp],['ATK',owned?enhancedValue(key,'atk'):u.atk],['DEF',owned?enhancedValue(key,'def'):u.def],['SPD',u.spd],['RNG',u.range],['MOV',u.move],['VSN',u.vision]];
-    card.innerHTML=`<div class="codex-faction-banner">${u.factionName}</div><div class="codex-card-head"><div class="codex-portrait-wrap"><canvas class="codex-portrait" width="236" height="236"></canvas>${owned?'':'<div class="codex-lock">🔒</div>'}</div><div class="codex-card-info"><div class="codex-primary-identity"><h3 class="codex-name">${owned?u.name:'미확보 유닛'}</h3><div class="codex-type">${categoryName(u.category)} · ${u.unitClass}</div></div><div class="codex-rank-row"><div class="codex-rank-box"><small>RARITY</small><b>${rarityInfo[u.rarity].name}</b></div><div class="codex-rank-box level-progress-box"><div class="codex-level-head"><div><small>LEVEL</small><b>LV.${lvl}</b></div><span class="codex-fragment-count">조각 ${fragmentLabel}</span></div><div class="codex-fragment-bar${owned?'':' locked'}${maxed?' max':''}"><i style="width:${fragmentPercent}%"></i></div></div></div></div></div><div class="codex-divider"></div><div class="codex-stat-grid">${stats.map(([label,value])=>`<div class="codex-stat"><small>${label}</small><b>${value}</b></div>`).join('')}</div><div class="codex-card-foot"><span>${owned?'클릭하여 상세정보 확인':'상점 보급으로 해금'}</span><strong>${u.id}</strong></div>`;
-    card.onclick=()=>openUnitDetail(key);
+    const stats=[['COST',u.cost],['HP',owned?enhancedValue(key,'hp'):u.hp],['ATK',owned?enhancedValue(key,'atk'):u.atk],['DEF',owned?enhancedValue(key,'def'):u.def],['MOV',u.move],['RNG',u.range],['VSN',u.vision],['SPD',u.spd]];
+    card.innerHTML=`<div class="codex-card-topline"><span class="faction">${u.factionName}</span><span class="class">${categoryName(u.category)} · ${u.unitClass}</span></div><div class="codex-card-head"><div class="codex-portrait-wrap"><canvas class="codex-portrait" width="236" height="236"></canvas>${owned?'':'<div class="codex-lock">🔒</div>'}</div><div class="codex-card-info"><div class="codex-card-rarity">${rarityInfo[u.rarity].name}</div><h3 class="codex-card-name">${owned?u.name:'미확보 유닛'}</h3><div class="codex-card-level"><b>LV.${lvl}</b><span>조각 ${fragmentLabel}</span></div><div class="codex-fragment-bar${owned?'':' locked'}${maxed?' max':''}"><i style="width:${fragmentPercent}%"></i></div></div></div><div class="codex-divider"></div><div class="codex-stat-grid">${stats.map(([label,value])=>`<div class="codex-stat"><small>${label}</small><b>${value}</b></div>`).join('')}</div><div class="codex-card-foot"><span class="detail-hint">${owned?'더블클릭 · 길게 눌러 상세보기':'상점 보급으로 해금'}</span><strong class="codex-card-code">${u.id}</strong></div>`;
+    if(owned){card.classList.add('detail-ready');attachCodexDetailGesture(card,key);}
     box.appendChild(card);drawProductionPortrait(card.querySelector('.codex-portrait'),key);
   });
   document.querySelectorAll('.collection-filter').forEach(btn=>btn.classList.toggle('active',btn.dataset.faction===collectionFactionFilter));
@@ -2076,14 +2109,14 @@ function escapeHtml(value){return String(value??'').replace(/[&<>"']/g,ch=>({'&'
 function openUnitDetail(key, context='codex'){
   const u=unitDefs[key];if(!u)return;currentDetailUnit=key;const owned=isUnlocked(key),lvl=unitLevel(key),frags=unitFragments(key),need=fragmentsNeeded(lvl),maxed=lvl>=MAX_UNIT_LEVEL;
   const win=document.getElementById('unitDetailWindow');win.style.setProperty('--faction-color',factionColor(u.faction));
-  document.getElementById('unitDetailTags').innerHTML=`<span class="faction">${u.factionName}</span><span>${rarityInfo[u.rarity].name}</span><span>LV.${lvl}</span>`; const detailIdentity=document.getElementById('unitDetailTags').parentElement; let factionLine=detailIdentity.querySelector('.unit-detail-faction'); if(!factionLine){factionLine=document.createElement('div');factionLine.className='unit-detail-faction';detailIdentity.insertBefore(factionLine,document.getElementById('unitDetailTags'));} factionLine.textContent=u.factionName;
-  document.getElementById('unitDetailName').textContent=owned?u.name:'미확보 유닛';document.getElementById('unitDetailSub').textContent=`${categoryName(u.category)} · ${u.unitClass}`;
+  document.getElementById('unitDetailTags').innerHTML=`<span class="faction">${u.factionName}</span><span class="rarity-tag">${rarityInfo[u.rarity].name}</span><span class="level-tag">LV.${lvl}</span><span class="cost-tag">COST ${u.cost}</span>`; const detailIdentity=document.getElementById('unitDetailTags').parentElement; let factionLine=detailIdentity.querySelector('.unit-detail-faction'); if(!factionLine){factionLine=document.createElement('div');factionLine.className='unit-detail-faction';detailIdentity.insertBefore(factionLine,document.getElementById('unitDetailTags'));} factionLine.textContent=u.factionName;
+  document.getElementById('unitDetailName').textContent=owned?u.name:'미확보 유닛';document.getElementById('unitDetailSub').innerHTML=`${categoryName(u.category)} · ${u.unitClass}<div class="unit-detail-head-code">${u.id}</div>`;
   const stats=[
     ['COST',u.cost,null],
     ['HP',u.hp,owned?enhancedValue(key,'hp')-u.hp:0],
     ['ATK',u.atk,owned?enhancedValue(key,'atk')-u.atk:0],
     ['DEF',u.def,owned?enhancedValue(key,'def')-u.def:0],
-    ['SPD',u.spd,null],['RNG',u.range,null],['MOV',u.move,null],['VSN',u.vision,null]
+    ['MOV',u.move,null],['RNG',u.range,null],['VSN',u.vision,null],['SPD',u.spd,null]
   ];
   const cleanStatNumber=value=>{
     const n=Math.round((Number(value)||0)*10)/10;
@@ -3957,7 +3990,7 @@ function chooseFaction(faction){
 function enterGameWithFaction(){
   if(!selectedPlayerFaction)return;
   document.getElementById('factionSelectModal')?.classList.remove('open');
-  metaOpenedFromMainMenu=false;closeMeta('collectionModal',false);closeMeta('shopModal',false);closeMeta('optionsModal',false);setPaused(false);
+  metaOpenedFromMainMenu=false;closeMeta('collectionModal',false);closeMeta('shopModal',false);closeMeta('guideModal',false);closeMeta('optionsModal',false);setPaused(false);
   resetGame();
   document.getElementById('mainMenu').classList.add('hidden');
   document.getElementById('gameShell').classList.remove('menu-locked');
@@ -3972,6 +4005,7 @@ document.querySelectorAll('.collection-filter').forEach(btn=>btn.onclick=()=>{co
 document.querySelectorAll('.collection-category-filter').forEach(btn=>btn.onclick=()=>{collectionCategoryFilter=btn.dataset.category;renderCollection();});
 document.getElementById('unitDetailClose').onclick=closeUnitDetail;document.getElementById('unitDetailBackdrop').onclick=closeUnitDetail;
 const shopBtn=document.getElementById('shopBtn');if(shopBtn)shopBtn.onclick=()=>openMeta('shopModal');
+const guideBtn=document.getElementById('guideBtn');if(guideBtn)guideBtn.onclick=()=>openMeta('guideModal');
 const optionsBtn=document.getElementById('optionsBtn');if(optionsBtn)optionsBtn.onclick=()=>openMeta('optionsModal');
 const resetAccountBtn=document.getElementById('resetAccountBtn');if(resetAccountBtn)resetAccountBtn.onclick=resetAllSavedData;
 document.querySelectorAll('[data-close]').forEach(el=>el.onclick=()=>closeMeta(el.dataset.close));
