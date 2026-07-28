@@ -2882,3 +2882,214 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
     height:min(27.5vh,255px)!important;
   }
 }
+
+/* ===== v0.20.9 RIGHT CARD RESPONSIVE TYPOGRAPHY / POSITION FIX ===== */
+@media (min-width:1101px){
+  .menu-side{
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:clamp(10px,1.45vh,16px)!important;
+    overflow:hidden!important;
+  }
+
+  .menu-side>.season-card,
+  .menu-side>.codex-transmission-card{
+    /* Both frames are scaled from one shared width, so their artwork,
+       overlays and typography always shrink/grow together. */
+    width:min(100%, calc((100dvh - 164px) / 2.21485))!important;
+    max-width:392px!important;
+    flex:0 0 auto!important;
+    container-type:inline-size;
+    container-name:rightMenuCard;
+  }
+
+  .menu-side>.season-card{
+    height:auto!important;
+    aspect-ratio:2 / 3!important;
+  }
+
+  .menu-info-card.featured.codex-transmission-card{
+    height:auto!important;
+    aspect-ratio:1024 / 732!important;
+    padding:0!important;
+    border:0!important;
+    outline:0!important;
+    background:none!important;
+    background-color:transparent!important;
+    box-shadow:none!important;
+    backdrop-filter:none!important;
+    -webkit-backdrop-filter:none!important;
+  }
+
+  .menu-info-card.featured.codex-transmission-card::before,
+  .menu-info-card.featured.codex-transmission-card::after,
+  .codex-transmission-runtime::before,
+  .codex-transmission-runtime::after{
+    content:none!important;
+    display:none!important;
+    background:none!important;
+    box-shadow:none!important;
+  }
+
+  /* Season copy: percentage anchors follow the 2:3 frame,
+     cqw type follows the actual rendered card width. */
+  .season-card-copy{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    pointer-events:none!important;
+  }
+
+  .season-card-heading{
+    position:absolute!important;
+    top:5.5%!important;
+    left:7.9%!important;
+    right:7.5%!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    gap:.7cqw!important;
+    margin:0!important;
+    padding:0!important;
+  }
+
+  .season-card-heading span{
+    margin:0!important;
+    font-size:2.55cqw!important;
+    line-height:1!important;
+    letter-spacing:.17em!important;
+    white-space:nowrap!important;
+  }
+
+  .season-card-heading b{
+    margin:0!important;
+    font-size:5.45cqw!important;
+    line-height:1.05!important;
+    letter-spacing:-.035em!important;
+    white-space:nowrap!important;
+  }
+
+  .season-card-story{
+    position:absolute!important;
+    left:7.9%!important;
+    right:8.2%!important;
+    bottom:5.8%!important;
+    width:auto!important;
+    margin:0!important;
+    padding:0!important;
+    background:none!important;
+  }
+
+  .season-card-story::before,
+  .season-card-story::after{
+    content:none!important;
+    display:none!important;
+  }
+
+  .season-card-story strong{
+    display:block!important;
+    margin:0 0 3.2cqw!important;
+    font-size:3.35cqw!important;
+    line-height:1.18!important;
+    letter-spacing:-.025em!important;
+    white-space:nowrap!important;
+  }
+
+  .season-card-story p{
+    max-width:72%!important;
+    margin:0 0 2.2cqw!important;
+    font-size:2.15cqw!important;
+    line-height:1.48!important;
+    letter-spacing:-.015em!important;
+    word-break:keep-all!important;
+  }
+
+  /* Codex content: no independent pixel sizing. Every value follows frame width. */
+  .codex-transmission-image{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    object-fit:contain!important;
+    background:transparent!important;
+  }
+
+  .codex-transmission-runtime{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    margin:0!important;
+    padding:0!important;
+    background:none!important;
+    box-shadow:none!important;
+    overflow:hidden!important;
+  }
+
+  .codex-transmission-runtime canvas{
+    position:absolute!important;
+    top:14.5%!important;
+    right:3.6%!important;
+    width:58%!important;
+    height:auto!important;
+    aspect-ratio:1 / 1!important;
+    margin:0!important;
+    background:transparent!important;
+    border:0!important;
+    box-shadow:none!important;
+  }
+
+  .codex-transmission-runtime .featured-unit-copy{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    margin:0!important;
+    padding:0!important;
+  }
+
+  .codex-transmission-runtime .featured-faction{
+    position:absolute!important;
+    top:18.5%!important;
+    left:8.2%!important;
+    width:38%!important;
+    margin:0!important;
+    font-size:3.2cqw!important;
+    line-height:1.08!important;
+    letter-spacing:.02em!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+  }
+
+  .codex-transmission-runtime .featured-unit-copy>b{
+    position:absolute!important;
+    left:8.2%!important;
+    right:8.2%!important;
+    bottom:8.8%!important;
+    max-width:none!important;
+    margin:0!important;
+    font-size:5.25cqw!important;
+    line-height:1.02!important;
+    letter-spacing:-.045em!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+  }
+
+  .codex-transmission-runtime .featured-meta,
+  .codex-transmission-runtime p{
+    display:none!important;
+  }
+}
+
+@media (min-width:1101px) and (max-height:820px){
+  .menu-side>.season-card,
+  .menu-side>.codex-transmission-card{
+    width:min(100%, calc((100dvh - 150px) / 2.21485))!important;
+    height:auto!important;
+  }
+}
