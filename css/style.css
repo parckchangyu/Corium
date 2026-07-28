@@ -2529,3 +2529,25 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
   pointer-events:none!important;
   clip-path:inset(50%)!important;
 }
+
+
+/* ChatGPT layout tweak */
+.menu-layout{
+  grid-template-columns:180px 1fr 380px !important;
+}
+.menu-side{
+  width:380px !important;
+  padding:8px 12px !important;
+  gap:20px !important;
+}
+.season-card{
+  height:360px !important;
+}
+.menu-info-card.featured{
+  background:transparent !important;
+  border:none !important;
+  box-shadow:none !important;
+  padding:0 !important;
+  min-height:210px !important;
+  height:210px !important;
+}
