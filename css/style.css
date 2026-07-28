@@ -2668,3 +2668,217 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
   .menu-info-card.featured.codex-transmission-card{height:27vh!important}
   .codex-transmission-runtime{inset:16% 8% 8% 8%!important}
 }
+
+/* ===== v0.20.8 RIGHT PANEL CLEAN SCALE FIX ===== */
+@media (min-width:1101px){
+  .menu-panel{
+    grid-template-columns:clamp(220px,16vw,285px) minmax(0,1fr) clamp(330px,20.4vw,392px)!important;
+  }
+
+  .menu-side{
+    padding:clamp(12px,1.65vh,18px) clamp(12px,1vw,18px)!important;
+    gap:clamp(12px,1.5vh,17px)!important;
+    background:transparent!important;
+    border-left:0!important;
+    overflow:hidden!important;
+  }
+
+  .menu-side>.season-card,
+  .menu-side>.codex-transmission-card{
+    width:100%!important;
+    height:auto!important;
+    max-width:none!important;
+    margin:0!important;
+  }
+
+  .menu-side>.season-card{
+    aspect-ratio:2 / 3!important;
+    flex:0 1 auto!important;
+    min-height:0!important;
+    overflow:hidden!important;
+  }
+
+  .season-card>img{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    max-height:none!important;
+    object-fit:contain!important;
+    object-position:center!important;
+    filter:drop-shadow(0 12px 24px rgba(0,0,0,.34))!important;
+  }
+
+  .season-card-copy{
+    inset:0!important;
+  }
+
+  .season-card-heading{
+    top:8.2%!important;
+    left:11.8%!important;
+    right:10%!important;
+    gap:4px!important;
+  }
+
+  .season-card-heading span{
+    font-size:clamp(8px,.53vw,10px)!important;
+    line-height:1.15!important;
+    letter-spacing:.22em!important;
+  }
+
+  .season-card-heading b{
+    font-size:clamp(15px,1.05vw,20px)!important;
+    line-height:1.18!important;
+    letter-spacing:-.02em!important;
+  }
+
+  .season-card-story{
+    left:11.8%!important;
+    right:11%!important;
+    bottom:8.7%!important;
+    padding-top:8%!important;
+    background:linear-gradient(180deg,transparent 0,rgba(0,7,14,.44) 32%,rgba(0,7,14,.9) 100%)!important;
+  }
+
+  .season-card-story strong{
+    margin-bottom:10px!important;
+    font-size:clamp(11px,.72vw,14px)!important;
+    line-height:1.3!important;
+  }
+
+  .season-card-story p{
+    margin:0 0 9px!important;
+    font-size:clamp(8px,.52vw,10px)!important;
+    line-height:1.55!important;
+  }
+
+  .menu-info-card.featured.codex-transmission-card{
+    aspect-ratio:1024 / 732!important;
+    flex:0 0 auto!important;
+    min-height:0!important;
+    padding:0!important;
+    border:0!important;
+    outline:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    overflow:hidden!important;
+    isolation:isolate!important;
+  }
+
+  .menu-info-card.featured.codex-transmission-card::before,
+  .menu-info-card.featured.codex-transmission-card::after{
+    display:none!important;
+    content:none!important;
+  }
+
+  .codex-transmission-image{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    object-fit:contain!important;
+    object-position:center!important;
+    z-index:0!important;
+    filter:drop-shadow(0 12px 24px rgba(0,0,0,.32))!important;
+  }
+
+  .codex-transmission-runtime{
+    position:absolute!important;
+    inset:0!important;
+    z-index:2!important;
+    display:block!important;
+    width:auto!important;
+    height:auto!important;
+    min-height:0!important;
+    margin:0!important;
+    opacity:1!important;
+    overflow:visible!important;
+    clip-path:none!important;
+    pointer-events:none!important;
+  }
+
+  .codex-transmission-runtime canvas{
+    position:absolute!important;
+    right:6.5%!important;
+    top:18%!important;
+    width:53%!important;
+    height:auto!important;
+    aspect-ratio:1 / 1!important;
+    min-height:0!important;
+    border:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    filter:drop-shadow(0 9px 12px rgba(0,0,0,.72))!important;
+  }
+
+  .codex-transmission-runtime .featured-unit-copy{
+    position:absolute!important;
+    left:12.4%!important;
+    right:8.5%!important;
+    top:20.5%!important;
+    bottom:10.5%!important;
+    min-width:0!important;
+    padding:0!important;
+  }
+
+  .codex-transmission-runtime .featured-faction{
+    display:block!important;
+    width:40%!important;
+    margin:0!important;
+    color:#2caeff!important;
+    font-size:clamp(9px,.64vw,12px)!important;
+    font-weight:900!important;
+    line-height:1.2!important;
+    white-space:nowrap!important;
+  }
+
+  .codex-transmission-runtime .featured-unit-copy>b{
+    position:absolute!important;
+    left:0!important;
+    bottom:25%!important;
+    display:block!important;
+    max-width:62%!important;
+    margin:0!important;
+    color:#f5f8ff!important;
+    font-size:clamp(15px,1.08vw,21px)!important;
+    line-height:1.08!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+  }
+
+  .codex-transmission-runtime .featured-meta{
+    position:absolute!important;
+    left:0!important;
+    bottom:13%!important;
+    display:block!important;
+    max-width:62%!important;
+    margin:0!important;
+    color:#b4c4d3!important;
+    font-size:clamp(8px,.56vw,11px)!important;
+    line-height:1.2!important;
+    white-space:nowrap!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+  }
+
+  .codex-transmission-runtime p{
+    display:none!important;
+  }
+}
+
+@media (min-width:1101px) and (max-height:820px){
+  .menu-side{
+    gap:10px!important;
+    padding-top:10px!important;
+    padding-bottom:10px!important;
+  }
+  .menu-side>.season-card{
+    aspect-ratio:auto!important;
+    height:min(54vh,500px)!important;
+  }
+  .menu-info-card.featured.codex-transmission-card{
+    aspect-ratio:auto!important;
+    height:min(27.5vh,255px)!important;
+  }
+}
