@@ -2394,6 +2394,74 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
   filter:brightness(1.035) drop-shadow(0 22px 42px rgba(0,0,0,.5));
 }
 
+.season-card-copy{
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  line-height:1.35;
+  color:#eef8ff;
+  font-family:inherit;
+  text-shadow:0 2px 8px rgba(0,0,0,.95),0 0 14px rgba(38,168,255,.25);
+}
+.season-card-heading{
+  position:absolute;
+  top:12.5%;
+  left:11.8%;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:.3em;
+}
+.season-card-heading span{
+  color:#62d8ff;
+  font-size:clamp(7px,.68vw,11px);
+  font-weight:900;
+  letter-spacing:.24em;
+}
+.season-card-heading b{
+  color:#fff;
+  font-size:clamp(10px,.95vw,16px);
+  font-weight:800;
+  letter-spacing:.06em;
+}
+.season-card-story{
+  position:absolute;
+  left:11.8%;
+  right:10.5%;
+  bottom:10.5%;
+  padding-top:7%;
+  background:linear-gradient(180deg,transparent 0,rgba(0,8,16,.38) 28%,rgba(0,7,14,.82) 100%);
+}
+.season-card-story::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:42%;
+  height:1px;
+  background:linear-gradient(90deg,#39cfff,rgba(57,207,255,0));
+  box-shadow:0 0 8px rgba(57,207,255,.55);
+}
+.season-card-story strong{
+  display:block;
+  margin-bottom:.9em;
+  color:#fff;
+  font-size:clamp(9px,.84vw,14px);
+  font-weight:800;
+  letter-spacing:.01em;
+}
+.season-card-story p{
+  margin:0 0 1.05em;
+  color:#c7d7e3;
+  font-size:clamp(6.5px,.61vw,10px);
+  font-weight:600;
+  line-height:1.65;
+  letter-spacing:-.02em;
+}
+.season-card-story p:last-child{margin-bottom:0}
+
+
 /* Keep the full-height image card above the featured Codex card. */
 .menu-side{
   min-height:0!important;
