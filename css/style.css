@@ -2490,3 +2490,13 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
   .season-card{display:block!important}
   .season-card img{max-height:calc(100dvh - 140px)}
 }
+
+
+/* ===== v0.20.5 SEASON HUB TEXT POSITION ADJUSTMENT ===== */
+.season-card-heading{
+  left:15%!important;
+}
+.season-card-story{
+  left:15%!important;
+  right:7.3%!important;
+}
