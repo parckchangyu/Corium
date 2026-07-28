@@ -1667,3 +1667,185 @@ button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
   .menu-icon{width:28px;height:28px;font-size:14px}
   .menu-label b{font-size:11px}.menu-label small{font-size:7px}
 }
+
+/* ===== v0.20.1 LEFT MENU BUTTON REFERENCE PASS (CSS ONLY) ===== */
+@media (min-width:761px){
+  .menu-panel{
+    grid-template-columns:240px minmax(0,1fr) 326px;
+  }
+
+  .menu-buttons{
+    padding:46px 18px 18px;
+    gap:12px;
+    background:
+      linear-gradient(90deg,rgba(5,17,31,.98),rgba(3,10,19,.9)),
+      repeating-linear-gradient(135deg,transparent 0 28px,rgba(68,156,229,.025) 29px 30px);
+  }
+
+  .menu-buttons:after{
+    padding:18px 6px 0;
+    border-top-color:rgba(54,111,164,.32);
+    color:#607b96;
+    font-size:10px;
+    letter-spacing:.02em;
+  }
+
+  .menu-btn{
+    min-height:82px;
+    padding:0 16px 0 14px;
+    display:grid;
+    grid-template-columns:58px minmax(0,1fr);
+    align-items:center;
+    column-gap:16px;
+    border:1px solid #285274;
+    border-left:3px solid #1978bb;
+    border-radius:0;
+    background:
+      linear-gradient(90deg,rgba(13,37,59,.96),rgba(5,17,30,.98) 78%),
+      linear-gradient(180deg,rgba(255,255,255,.035),transparent 38%);
+    box-shadow:
+      inset 0 1px rgba(255,255,255,.04),
+      inset 0 0 0 1px rgba(1,6,12,.55),
+      0 5px 16px rgba(0,0,0,.2);
+    overflow:visible;
+    isolation:isolate;
+  }
+
+  .menu-btn:before{
+    content:"";
+    position:absolute;
+    z-index:3;
+    left:-3px;
+    top:12px;
+    bottom:12px;
+    width:3px;
+    background:#299eea;
+    opacity:.56;
+    box-shadow:0 0 10px rgba(42,164,244,.4);
+  }
+
+  .menu-btn:after{
+    content:"";
+    position:absolute;
+    z-index:2;
+    left:0;
+    top:-1px;
+    width:38px;
+    height:1px;
+    margin:0;
+    background:#3bbdff;
+    color:transparent;
+    box-shadow:0 0 7px rgba(59,189,255,.58);
+  }
+
+  .menu-icon{
+    width:54px;
+    height:54px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0;
+    border:1px solid #35688d;
+    background:
+      radial-gradient(circle at 50% 42%,rgba(58,154,220,.18),transparent 60%),
+      linear-gradient(180deg,#112c44,#091a2b);
+    box-shadow:
+      inset 0 0 18px rgba(34,135,205,.12),
+      0 0 0 1px rgba(2,8,14,.6);
+    color:#e7f7ff;
+    font-size:25px;
+    line-height:1;
+    text-shadow:0 0 9px rgba(100,202,255,.45);
+  }
+
+  .menu-label{
+    min-width:0;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:center;
+    gap:6px;
+  }
+
+  .menu-label b{
+    color:#f2f7ff;
+    font-size:20px;
+    line-height:1;
+    letter-spacing:-.045em;
+    text-shadow:0 2px 8px rgba(0,0,0,.55);
+  }
+
+  .menu-label small{
+    color:#69bff2;
+    font-size:10px;
+    line-height:1;
+    font-weight:900;
+    letter-spacing:.15em;
+  }
+
+  .menu-btn.primary{
+    border-color:#2a9be3;
+    border-left-color:#31b4ff;
+    background:
+      linear-gradient(90deg,rgba(15,75,116,.98),rgba(8,36,61,.98) 76%),
+      linear-gradient(180deg,rgba(100,200,255,.07),transparent 42%);
+    box-shadow:
+      inset 0 0 38px rgba(39,154,226,.16),
+      inset 0 1px rgba(255,255,255,.08),
+      0 0 18px rgba(31,150,225,.14);
+  }
+
+  .menu-btn.primary:before{
+    opacity:1;
+    background:#39bdff;
+    box-shadow:0 0 13px rgba(57,189,255,.72);
+  }
+
+  .menu-btn.primary:after{
+    content:"";
+    display:block;
+    margin:0;
+    color:transparent;
+  }
+
+  .menu-btn.primary .menu-icon{
+    border-color:#4385af;
+    background:
+      radial-gradient(circle at 50% 42%,rgba(106,208,255,.27),transparent 62%),
+      linear-gradient(180deg,#163d5c,#0a2338);
+    box-shadow:
+      inset 0 0 22px rgba(54,166,230,.18),
+      0 0 12px rgba(41,157,224,.1);
+  }
+
+  .menu-btn:hover:not(:disabled){
+    transform:translateX(3px);
+    border-color:#45b8f6;
+    border-left-color:#4cc7ff;
+    background:
+      linear-gradient(90deg,rgba(18,67,101,.98),rgba(7,26,43,.98) 80%),
+      linear-gradient(180deg,rgba(120,214,255,.07),transparent 42%);
+    box-shadow:
+      inset 0 0 34px rgba(43,164,235,.14),
+      0 0 18px rgba(32,160,230,.13);
+  }
+
+  .menu-btn:hover:not(:disabled) .menu-icon{
+    border-color:#53a9d8;
+    filter:brightness(1.1);
+  }
+
+  .menu-btn:active:not(:disabled){
+    transform:translateX(1px);
+  }
+}
+
+/* Landscape phones and compact tablets keep the same visual language. */
+@media (max-width:1100px) and (min-width:761px){
+  .menu-panel{grid-template-columns:210px minmax(0,1fr)}
+  .menu-buttons{padding:34px 12px 14px;gap:9px}
+  .menu-btn{min-height:68px;grid-template-columns:46px minmax(0,1fr);column-gap:12px;padding-left:10px}
+  .menu-icon{width:44px;height:44px;font-size:20px}
+  .menu-label b{font-size:17px}
+  .menu-label small{font-size:8px}
+}
